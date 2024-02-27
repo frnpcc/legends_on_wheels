@@ -4,18 +4,12 @@ User.destroy_all
 puts "Cleaning database 🧼"
 sleep 1
 
-# User.create!(name: "Frederic Marchal", username: "fmarchal03", email: "fmarchal03@test.com", password: "123456")
-frederic = User.create!(email: "fmarchal03@test.com", password: "123456")
-# User.create!(name: "Daniel Felipe Vanegas", username: "dfvanegas1", email: "dfvanegas1@test.com", password: "123456")
-User.create!(email: "dfvanegas1@test.com", password: "123456")
-# User.create!(name: "Franchesca Correa", username: "frnpcc", email: "frnpcc@test.com", password: "123456")
-User.create!(email: "frnpcc@test.com", password: "123456")
-# User.create!(name: "Michalis Ioannides", username: "1567ds", email: "1567ds@test.com", password: "123456")
-User.create!(email: "1567ds@test.com", password: "123456")
-# User.create!(name: "Emma A. A. Rünzel", username: "emmvs", email: "emmvs@test.com", password: "123456")
-emma = User.create!(email: "emmvs@test.com", password: "123456")
-# User.create!(name: "Gonzalo Guerra", username: "Gonz44", email: "gonz44@test.com", password: "123456")
-User.create!(email: "gonz44@test.com", password: "123456")
+frederic = User.create!(name: "Frederic Marchal", username: "fmarchal03", email: "fmarchal03@test.com", password: "123456")
+User.create!(name: "Daniel Felipe Vanegas", username: "dfvanegas1", email: "dfvanegas1@test.com", password: "123456")
+User.create!(name: "Franchesca Correa", username: "frnpcc", email: "frnpcc@test.com", password: "123456")
+User.create!(name: "Michalis Ioannides", username: "1567ds", email: "1567ds@test.com", password: "123456")
+emma = User.create!(name: "Emma A. A. Rünzel", username: "emmvs", email: "emmvs@test.com", password: "123456")
+User.create!(name: "Gonzalo Guerra", username: "Gonz44", email: "gonz44@test.com", password: "123456")
 
 puts "#{User.count} Users created 🤦🏻‍♂️ 👱🏼‍♀️ 🤷🏻‍♀️ 👲🏻"
 
@@ -77,8 +71,8 @@ puts "#{HistoricalFigure.count} Historical Figures created 🏆"
 
 Race.create!(user_id: emma.id, historical_figure_id: queen.id, result: 'win')
 Race.create!(user_id: emma.id, historical_figure_id: lincoln.id, result: 'win')
-Race.create!(user_id: frederic.id, historical_figure_id: cleo.id, result: 'loose')
-Race.create!(user_id: frederic.id, historical_figure_id: marie.id, result: 'loose')
+Race.create!(user_id: frederic.id, historical_figure_id: cleo.id, result: 'loss')
+Race.create!(user_id: frederic.id, historical_figure_id: marie.id, result: 'loss')
 
 puts "#{Race.count} Races created 🏎️💨 🏁 🏁 🏁"
 sleep 1
