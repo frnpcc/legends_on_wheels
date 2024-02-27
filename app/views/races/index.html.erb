@@ -1,0 +1,36 @@
+<% content_for :title, 'Race Results' %>
+
+<div class="races-index">
+  <div class="top-button">
+    <a href="/races/new" class="btn btn-orange">Start New Race</a>
+  </div>
+</div>
+
+  <div class="race-images">
+    <div class="left-image">
+      <%= image_tag 'https://plus.unsplash.com/premium_photo-1708983589793-56673027592e?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Left Race Image', class: 'race-image' %>
+    </div>
+    <div class="right-image">
+      <%= image_tag 'https://plus.unsplash.com/premium_photo-1708983589793-56673027592e?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'Right Race Image', class: 'race-image' %>
+    </div>
+  </div>
+
+  <div class="latest-results">
+    <div class="results-box wins">
+      <h3>Wins</h3>
+      <ul>
+        <% @races.where(result: 'win').each do |race| %>
+          <li> 🏆 <%= race.historical_figure.name %> won on <%= race.created_at.strftime('%B %d, %Y') %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="results-box losses">
+      <h3>Losses</h3>
+      <ul>
+        <% @races.where(result: 'loss').each do |race| %>
+          <li> ❌ <%= race.historical_figure.name %> lost on <%= race.created_at.strftime('%B %d, %Y') %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
