@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'races/new'
+  get 'races/create'
+  get 'races/show'
+  get 'races/index'
   devise_for :users
   root to: "pages#home"
   resources :historical_figures, only: [:index, :show] do
