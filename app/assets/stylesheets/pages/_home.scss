@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+.home-background {
+  background-image: url(dalle.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-home {
+  background-color: #0C191A;
+  color: white;
+  padding: 30px 90px;
+  border-radius: 30px;
+  position: center;
+}
