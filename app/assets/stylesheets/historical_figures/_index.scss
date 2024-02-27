@@ -1,0 +1,27 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(241, 238, 217, 1);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows multiple rows */
+  justify-content: space-around;
+  /* Adjusts spacing between the boxes */
+  gap: 20px;
+  /* Space between boxes if they wrap to the next line */
+  background-color: rgba(241, 238, 217, 1);
+}
+
+.box {
+  width: 318px;
+  height: 500px;
+  position: relative;
+  background: white;
+  box-shadow: 0px 8px 12px rgba(30, 30, 30, 0.04);
+  border-radius: 12px;
+  overflow: hidden;
+}
