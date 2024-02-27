@@ -10,15 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_27_105513) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_27_144856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "historical_figures", force: :cascade do |t|
+    t.text "bio"
+    t.integer "car_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "era"
+    t.string "image_url"
+    t.string "category"
+    t.integer "price"
+  end
 
   create_table "races", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "historical_figure_id", null: false
+    t.datetime "race_date"
+    t.integer "car_type"
+    t.index ["historical_figure_id"], name: "index_races_on_historical_figure_id"
     t.index ["user_id"], name: "index_races_on_user_id"
   end
 
@@ -34,5 +50,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_105513) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "races", "historical_figures"
   add_foreign_key "races", "users"
 end

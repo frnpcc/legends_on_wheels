@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'races/index'
   devise_for :users
   root to: "pages#home"
-  resources :figures, only: [:index, :show] do
+  resources :historical_figures, only: [:index, :show] do
     resources :races, only: [:new, :create]
   end
   resources :races, only: [:index, :show]
