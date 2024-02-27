@@ -35,7 +35,7 @@ cleo = HistoricalFigure.create!(
   name: 'Cleopatra',
   bio: 'The last active ruler of the Ptolemaic Kingdom of Egypt.',
   era: '1st century BC',
-  image_url: 'https://asset.cloudinary.com/dswjgd3a4/1608ff16186f5566fa1d9a6b673000e4',
+  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044193/DALL_E_2024-02-26_20.28.10_-_Create_a_close-up_image_of_a_character_s_head_in_a_playful_and_historically_themed_cartoon-style_inspired_by_a_generic_figure_reminiscent_of_Cleopatr-Photoroom.png-Photoroom_d7zgtq.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 80_000
 )
