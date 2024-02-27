@@ -1,0 +1,2 @@
+class HistoricalFigure < ApplicationRecord
+end
