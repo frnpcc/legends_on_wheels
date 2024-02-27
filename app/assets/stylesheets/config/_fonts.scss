@@ -3,27 +3,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sigmar+One&display=swap');
 
-// Define fonts for body and headers
-$body-font-sm: "Open Sans", "Helvetica", "sans-serif";
-$body-font-md: "Open Sans", "Helvetica", "sans-serif";
-$body-font-lg: "Open Sans", "Helvetica", "sans-serif";
+// Header Fonts
 $headers-font-sm: "Sigmar One", "Helvetica", "sans-serif";
 $headers-font-md: "Sigmar One", "Helvetica", "sans-serif";
 $headers-font-lg: "Sigmar One", "Helvetica", "sans-serif";
 
+// Body Fonts
+$body-font-sm: "Open Sans", "Helvetica", "sans-serif";
+$body-font-md: "Open Sans", "Helvetica", "sans-serif";
+$body-font-lg: "Open Sans", "Helvetica", "sans-serif";
+
+// Custom Headers
 h1 {
   font-family: $body-font-lg;
+  font-weight: 600;
   font-size: 50px;
 }
 
 h2 {
   font-family: $body-font-md;
+  font-weight: 400;
+  font-size: 26px;
 }
 
 h3 {
   font-family: $body-font-sm;
+  font-weight: 400;
+  font-size: 22px;
 }
 
-p {
+// Costum Paragraphs
+.p-1 {
   font-family: $body-font-md;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.p-2 {
+  font-family: $body-font-md;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.p-3 {
+  font-family: $body-font-md;
+  font-weight: 400;
+  font-size: 16px;
 }
