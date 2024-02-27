@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Historical Figures", historical_figures_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "My Races", races_path, class: "nav-link" %>

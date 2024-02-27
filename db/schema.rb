@@ -40,9 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_140241) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-ActiveRecord::Schema[7.1].define(version: 2024_02_26_200355) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  end
 
   create_table "historical_figures", force: :cascade do |t|
     t.text "bio"
