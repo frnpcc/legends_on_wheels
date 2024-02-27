@@ -1,7 +1,12 @@
 <div class="container-card">
   <% @historical_figures.each do |figure| %>
     <div class="box">
+      <div class="picture-box">
+        <%= image_tag figure.image_url if figure.image_url %>
+      </div>
       <h2><%= figure.name %></h2>
+      <p><%= figure.category %></p>
+      <p><%= figure.price %> FR</p>
     </div>
   <% end %>
 </div>
