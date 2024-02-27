@@ -1,0 +1,42 @@
+.races-index {
+  text-align: center;
+}
+
+.btn-orange {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.race-images .race-image {
+  width: 150px;
+  height: auto;
+  margin: 20px;
+  display: inline-block;
+}
+
+.latest-results {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.results-box {
+  width: 500px;
+  margin: 0 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.wins {
+  background-color: #dff0d8;
+}
+
+.losses {
+  background-color: #f2dede;
+}
