@@ -1,12 +1,15 @@
+ <h2 class="historical-figure-page-cta">Select your Historical Figure for the Race!  </h2>
 <div class="container-card">
   <% @historical_figures.each do |figure| %>
-    <div class="box">
+    <div class="card">
+      <%= link_to historical_figure_path(figure), class: "card" do %>
       <div class="picture-box">
-        <%= image_tag figure.image_url if figure.image_url %>
+        <%= image_tag figure.image_url, class: "historical-figure-picture" %>
       </div>
-      <h2><%= figure.name %></h2>
-      <p><%= figure.category %></p>
-      <p><%= figure.price %> FR</p>
+      <h2 class="historical-figure-name"><%= figure.name %></h2>
+      <p class="historical-figure-category"><%= figure.category %></p>
+      <p class="historical-figure-price"><%= figure.price %> FR</p>
+      <% end %>
     </div>
   <% end %>
 </div>
