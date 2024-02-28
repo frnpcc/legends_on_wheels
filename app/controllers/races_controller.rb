@@ -1,4 +1,18 @@
 class RacesController < ApplicationController
+
+  def index
+    @races = Race.all
+  end
+
+  def show
+    @race = Race.find(params[:id])
+    @geoloaction_hash = Hash.new
+    @geoloaction_hash["lat"] = @race.latitude
+    @geoloaction_hash["lng"] = @race.longitude
+    @historical_figure = @race.historical_figure
+    @car_type = @race.car_type
+  end
+
   def new
     @figure = HistoricalFigure.find(params[:id])
     @race = Race.new
@@ -15,17 +29,10 @@ class RacesController < ApplicationController
     end
   end
 
-  def show
-    @race = Race.find(params[:id])
-    @geoloaction_hash = Hash.new
-    @geoloaction_hash["lat"] = @race.latitude
-    @geoloaction_hash["lng"] = @race.longitude
-    @historical_figure = @race.historical_figure
-    @car_type = @race.car_type
+  def win
   end
 
-  def index
-    @races = Race.all
+  def loose
   end
 
   private
