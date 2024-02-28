@@ -7,9 +7,9 @@ class RacesController < ApplicationController
   def create
     @race = Race.new(race_params)
     @race.user = current_user
-    @race.historical_figure = HistoricalFigure.find(params[:race][:historical_figure_id])
+    @race.historical_figure = HistoricalFigure.find(params[:historical_figure_id])
     if @race.save
-      redirect_to @race.historical_figure
+      redirect_to @race
     else
       render :new
     end
