@@ -4,6 +4,8 @@ class RacesController < ApplicationController
     @geoloaction_hash = Hash.new
     @geoloaction_hash["lat"] = @race.latitude
     @geoloaction_hash["lng"] = @race.longitude
+    @historical_figure = @race.historical_figure
+    @car_type = @race.car_type
   end
 
   def index
