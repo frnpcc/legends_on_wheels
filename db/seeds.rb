@@ -69,10 +69,37 @@ HistoricalFigure.create!(
 
 puts "#{HistoricalFigure.count} Historical Figures created 🏆"
 
-Race.create!(user_id: emma.id, historical_figure_id: queen.id, result: 'win')
-Race.create!(user_id: emma.id, historical_figure_id: lincoln.id, result: 'win')
-Race.create!(user_id: frederic.id, historical_figure_id: cleo.id, result: 'loss')
-Race.create!(user_id: frederic.id, historical_figure_id: marie.id, result: 'loss')
+Race.create!(
+  user_id: emma.id,
+  historical_figure_id: queen.id,
+  result: 'win',
+  location: "Berlin, Germany",
+  location_enum: 0
+)
+
+Race.create!(
+  user_id: emma.id,
+  historical_figure_id: lincoln.id,
+  result: 'win',
+  location: "Berlin, Germany",
+  location_enum: 2
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: cleo.id,
+  result: 'loss',
+  location: "Basel, Switzerland",
+  location_enum: 1
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: marie.id,
+  result: 'loss',
+  location: "Basel, Switzerland",
+  location_enum: 0
+)
 
 puts "#{Race.count} Races created 🏎️💨 🏁 🏁 🏁"
 sleep 1
