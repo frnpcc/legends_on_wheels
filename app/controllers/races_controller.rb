@@ -26,6 +26,6 @@ class RacesController < ApplicationController
   private
 
   def race_params
-    params.require(:race).permit(:historical_figure_id)
+    params.require(:race).permit(:historical_figure_id, :car_type, :location_enum)
   end
 end

@@ -1,0 +1,25 @@
+<div class="historical-figure-container">
+  <h1><%= @historical_figure.name %></h1>
+  <p><%= @historical_figure.bio %></p>
+  <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
+</div>
+
+<div class="figure-details">
+  <div class="carousel-container">
+    <% Race.car_types.keys.each do |car_type| %>
+      <div class="carousel-slide">
+        <h3><%= car_type.titleize %></h3>
+        <%= image_tag "#{car_type}.jpg", alt: car_type.titleize %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="car-selection">
+    <%= form_with model: @race, url: races_path, local: true do |form| %>
+    <%= form.hidden_field :historical_figure_id, value: @historical_figure.id %>
+    <%= form.select :car_type, Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, {}, { class: 'dropdown' } %>
+    <%= form.select :location_enum, Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, {}, { class: 'dropdown' } %>
+    <%= form.submit "Confirm Selection" %>
+  <% end %>
+  </div>
+</div>

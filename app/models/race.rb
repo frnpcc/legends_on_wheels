@@ -4,5 +4,15 @@ class Race < ApplicationRecord
 
   validates :user_id, :historical_figure_id, presence: true
 
-  enum car_type: { bmw: 0, volkswagen_bus: 1, ford_mustang: 2 }
+  enum car_type: {
+    bmw_m4_competition: 0,
+    ford_mustang: 1,
+    vw_bus: 2
+  }, _prefix: true
+
+  enum location_enum: {
+    madrid: 0,
+    berlin: 1,
+    paris: 2
+  }, _prefix: true
 end
