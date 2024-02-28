@@ -1,4 +1,9 @@
 class RacesController < ApplicationController
+
+  def index
+    @races = Race.all
+  end
+
   def show
     @race = Race.find(params[:id])
     @geoloaction_hash = Hash.new
@@ -6,10 +11,6 @@ class RacesController < ApplicationController
     @geoloaction_hash["lng"] = @race.longitude
     @historical_figure = @race.historical_figure
     @car_type = @race.car_type
-  end
-
-  def index
-    @races = Race.all
   end
 
   def new
@@ -20,12 +21,18 @@ class RacesController < ApplicationController
   def create
     @race = Race.new(race_params)
     @race.user = current_user
-    @race.historical_figure = HistoricalFigure.find(params[:race][:historical_figure_id])
+    @race.historical_figure = HistoricalFigure.find(params[:historical_figure_id])
     if @race.save
       redirect_to @race
     else
       render :new
     end
+  end
+
+  def win
+  end
+
+  def loose
   end
 
   private
