@@ -1,20 +1,24 @@
-<h1>Races#show</h1>
+<div class="container">
+  <h3>You have selected this historical_figure:</h3>
+  <div class="historical-figure-container">
+    <h1><%= @historical_figure.name %></h1>
+    <p><%= @historical_figure.bio %></p>
+    <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
+  </div>
 
-<h3>You have selected this historical_figure:</h3>
-<div class="historical-figure-container">
-  <h1><%= @historical_figure.name %></h1>
-  <p><%= @historical_figure.bio %></p>
-  <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
+  <h3>You have selected this car:</h3>
+  <div class="car-type-container">
+    <h1><%= @car_type.titleize %></h1>
+    <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize %>
+  </div>
+
+  <%= link_to "Start Race!", win_path, class: "btn btn-light" %>
+
+  <h3>Your race is going to be here:</h3>
+  <div style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-geoloaction-hash-value="<%= @geoloaction_hash.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
-
-<h3>You have selected this car:</h3>
-<div class="car-type-container">
-  <h1><%= @car_type.titleize %></h1>
-  <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize %>
-</div>
-
-<h3>Your race is going to be here:</h3>
-<div style="width: 100%; height: 400px;"
-  data-controller="map"
-  data-map-geoloaction-hash-value="<%= @geoloaction_hash.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

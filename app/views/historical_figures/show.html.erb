@@ -25,11 +25,10 @@
   </div>
 
   <div class="car-selection">
-    <%= form_with model: @race, url: races_path, local: true do |form| %>
-      <%= form.hidden_field :historical_figure_id, value: @historical_figure.id %>
-      <%= form.select :car_type, Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, {}, { class: 'dropdown' } %>
-      <%= form.select :location_enum, Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, {}, { class: 'dropdown' } %>
-      <%= form.submit "Confirm Selection" %>
+    <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
+      <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
+      <%= form.input :location_enum, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
+      <%= form.button :submit, "Confirm Selection" %>
     <% end %>
   </div>
 </div>
