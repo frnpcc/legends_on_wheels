@@ -1,0 +1,57 @@
+// app/assets/stylesheets/historical_figures.scss
+.historical-figure-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.historical-figure-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.historical-figure-container p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.main-figure-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: if you want rounded corners */
+}
+
+.figure-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-container {
+  width: 50%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Optional: for rounded corners */
+}
+
+.car-selection {
+  width: 45%;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
