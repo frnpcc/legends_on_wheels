@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema[7.1].define(version: 2024_02_28_113326) do
 ActiveRecord::Schema[7.1].define(version: 2024_02_28_112723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +63,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_112723) do
     t.bigint "historical_figure_id", null: false
     t.datetime "race_date"
     t.integer "car_type"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "location"
     t.integer "location_enum"
     t.index ["historical_figure_id"], name: "index_races_on_historical_figure_id"
     t.index ["user_id"], name: "index_races_on_user_id"

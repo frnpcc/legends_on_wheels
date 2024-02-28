@@ -4,6 +4,9 @@ class Race < ApplicationRecord
 
   validates :user_id, :historical_figure_id, presence: true
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   enum car_type: {
     bmw_m4_competition: 0,
     ford_mustang: 1,

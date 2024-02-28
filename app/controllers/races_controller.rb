@@ -17,6 +17,9 @@ class RacesController < ApplicationController
 
   def show
     @race = Race.find(params[:id])
+    @geoloaction_hash = Hash.new
+    @geoloaction_hash["lat"] = @race.latitude
+    @geoloaction_hash["lng"] = @race.longitude
   end
 
   def index
