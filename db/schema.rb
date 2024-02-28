@@ -62,10 +62,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_113326) do
     t.bigint "historical_figure_id", null: false
     t.datetime "race_date"
     t.integer "car_type"
+    t.integer "location_enum"
     t.float "latitude"
     t.float "longitude"
     t.string "location"
-    t.integer "location_enum"
     t.index ["historical_figure_id"], name: "index_races_on_historical_figure_id"
     t.index ["user_id"], name: "index_races_on_user_id"
   end
