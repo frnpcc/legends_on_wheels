@@ -1,4 +1,3 @@
-// app/assets/stylesheets/historical_figures.scss
 .historical-figure-container {
   text-align: center;
   margin-bottom: 20px;
@@ -17,7 +16,7 @@
 .main-figure-image {
   max-width: 100%;
   height: auto;
-  border-radius: 10px; /* Optional: if you want rounded corners */
+  border-radius: 10px;
 }
 
 .figure-details {
@@ -32,7 +31,7 @@
 .carousel-slide img {
   width: 100%;
   height: auto;
-  border-radius: 5px; /* Optional: for rounded corners */
+  border-radius: 5px;
 }
 
 .car-selection {
@@ -48,7 +47,7 @@
 }
 
 .btn {
-  background-color: #007bff; /* Bootstrap primary blue */
+  background-color: #007bff;
   color: white;
   padding: 10px 15px;
   border: none;
