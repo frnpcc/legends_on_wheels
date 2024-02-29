@@ -15,7 +15,7 @@
 
 .main-figure-image {
   max-width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 10px;
 }
 
@@ -28,11 +28,16 @@
   width: 50%;
 }
 
-.carousel-slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+#carouselExampleIndicators {
+  width: 50%;
+  margin: 0 auto;
 }
+
+.carousel-inner img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .car-selection {
   width: 45%;
