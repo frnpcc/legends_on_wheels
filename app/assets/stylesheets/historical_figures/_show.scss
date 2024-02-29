@@ -1,5 +1,4 @@
 .combined-container {
-  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +85,9 @@
 }
 
 .car-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 451px;
   margin-top: 41px;
   background-color: white;
@@ -109,6 +111,7 @@
 
 
 .selection-details {
+  text-align: center;
   border-top: 1px solid #ccc;
   padding-top: 10px;
   margin-top: 10px;
@@ -116,30 +119,45 @@
 }
 
 
-.btn-show {
+.btn-custom {
   display: block;
   width: 100%;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 10px 0;
   border-radius: 20px;
   border: none;
   font-size: 18px;
   font-weight: bold;
-  &:a {background-color: #ff7f50;}
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.change-driver-btn {
+
+.btn-change-driver {
   background-color: #dddddd;
   color: #333;
-  background-color: lightgray;
 }
 
-.confirm-race-btn {
+.btn-confirm-race {
   background-color: #ff7f50;
   color: white;
 }
 
-
-.btn:hover {
+.btn-custom:hover {
   opacity: 0.8;
+}
+
+.form-group label {
+  display: none;
+}
+
+
+.selection-title {
+  text-align: center;
+}
+
+.title-wrapper h6 {
+  font-size: 24px;
+  margin-bottom: 0;
 }
