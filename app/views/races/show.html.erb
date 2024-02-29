@@ -15,14 +15,13 @@
 
 
   <div class="start-race-button-container">
-  <!-- Add Action w/ Stimulus Controller -->
-  <%= link_to "Start your engine!", win_path, class: "btn-custom" %>
+   <%= link_to "Start your engine!", win_path, class: "btn-custom" %>
   </div>
 
   <h3 class="map-title">Your race is going to be here:</h3>
   <div class="map" style="width: 100%; height: 400px;"
     data-controller="map"
-    data-map-geoloaction-hash-value="<%= @geoloaction_hash.to_json %>"
+    data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
