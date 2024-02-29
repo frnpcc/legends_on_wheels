@@ -36,9 +36,15 @@
      </div>
   <hr class="full-width-line"/>
     <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
+
       <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label: false, prompt: "Select Car", input_html: { class: 'form-select', data: { action: "change->selection#updateVehicle", target: "selection.carType" } } %>
 
       <%= form.input :location, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label: false, prompt: "Select Location", input_html: { class: 'form-select', data: { action: "change->selection#updateLocation", target: "selection.location" } } %>
+      <%= form.input :location,
+        input_html: {data: {location_autocomplete_target: "location"}, class: "d-none mapboxgl-ctrl-geocoder"},
+        wrapper_html: {data: {controller: "location-autocomplete",
+        location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+      %>
 
       <div class="selection-details">
         <p>Driver: <%= @historical_figure.name %></p>
