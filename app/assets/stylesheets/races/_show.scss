@@ -1,0 +1,111 @@
+.race-show-recap-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  background-color: rgba(241, 238, 217, 1);
+}
+
+.team-container {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  align-items: center;
+  /* This vertically centers the items if their heights differ */
+  // gap: 100px;
+  /* Optional: adds some space between the label and the value */
+  // justify-content: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.historical-figure-race-container {
+  width: 318px;
+  height: 500px;
+  justify-content: space-between;
+  align-items: center;
+  /* This vertically centers the items if their heights differ */
+  gap: 10px;
+  /* Optional: adds some space between the label and the value */
+}
+
+.car-type-race-container {
+  width: 318px;
+  height: 500px;
+  justify-content: space-between;
+  align-items: center;
+  /* This vertically centers the items if their heights differ */
+  gap: 10px;
+}
+
+.main-figure-image-race {
+  max-width: 100%;
+  // width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.car-race-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.start-race-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  background-color: rgba(241, 238, 217, 1);
+}
+
+.map-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(241, 238, 217, 1);
+}
+
+.btn-custom {
+  font-size: large;
+  background-color: rgb(204, 78, 25);
+  /* A nice shade of blue */
+  color: white;
+  /* White text color */
+  padding: 10px 20px;
+  /* Top and bottom padding, left and right padding */
+  border-radius: 5px;
+  /* Rounded corners */
+  border: none;
+  /* Remove default border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
+  text-decoration: none;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+  background-color: #0056b3;
+  /* Darker shade of blue on hover/focus */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  /* Slightly larger shadow on hover/focus */
+  transform: translateY(-2px);
+  /* Slightly raise the button on hover/focus */
+}
+
+.btn-custom:active {
+  background-color: #004080;
+  /* Even darker shade of blue on active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Smaller shadow for pressed effect */
+  transform: translateY(1px);
+  /* Button looks pressed down */
+}

@@ -1,22 +1,25 @@
 <div class="container">
-  <h3>You have selected this historical_figure:</h3>
-  <div class="historical-figure-container">
-    <h1><%= @historical_figure.name %></h1>
+  <h1 class="race-show-recap-title">Here is your team!</h1>
+  <div class="team-container row">
+  <div class="historical-figure-race-container col-12 col-md-6">
+    <h3><%= @historical_figure.name %></h3>
     <p><%= @historical_figure.bio %></p>
-    <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
+    <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image-race' %>
   </div>
 
-  <h3>You have selected this car:</h3>
-  <div class="car-type-container">
-    <h1><%= @car_type.titleize %></h1>
-    <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize %>
+  <div class="car-type-race-container col-12 col-md-6">
+    <h3><%= @car_type.titleize %></h3>
+    <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
+  </div>
   </div>
 
-  <!-- Add Action w/ Stimulus Controller -->
-  <%= link_to "Start Race!", result_path, class: "btn btn-light" %>
 
-  <h3>Your race is going to be here:</h3>
-  <div style="width: 100%; height: 400px;"
+  <div class="start-race-button-container">
+   <%= link_to "Start your engine!", win_path, class: "btn-custom" %>
+  </div>
+
+  <h3 class="map-title">Your race is going to be here:</h3>
+  <div class="map" style="width: 100%; height: 400px;"
     data-controller="map"
     data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
