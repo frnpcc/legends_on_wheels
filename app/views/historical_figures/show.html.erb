@@ -1,34 +1,51 @@
-<div class="historical-figure-container">
-  <h1><%= @historical_figure.name %></h1>
-  <p><%= @historical_figure.bio %></p>
-  <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
-</div>
+<div class="combined-container">
 
-<div class="figure-details">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% Race.car_types.keys.each_with_index do |car_type, index| %>
-        <div class="carousel-item <%= 'active' if index.zero? %>">
-          <h3><%= car_type.titleize %></h3>
-          <%= image_tag "#{car_type}.jpg", alt: car_type.titleize %>
-        </div>
-      <% end %>
+  <div class="historical-figure-container d-flex flex-row justify-content-between">
+    <div class="figure-text w-50">
+      <h1><%= @historical_figure.name %></h1>
+      <p><%= @historical_figure.bio %></p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="figure-image w-50">
+      <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image' %>
+    </div>
   </div>
 
-  <div class="car-selection">
-    <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
-      <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
-      <%= form.input :location_enum, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
-      <%= form.button :submit, "Confirm Selection" %>
-    <% end %>
+  <div class="figure-details d-flex flex-row justify-content-between w-100">
+    <div id="carouselExampleIndicators" class="carousel-container carousel slide w-50" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% Race.car_types.keys.each_with_index do |car_type, index| %>
+          <div class="carousel-item <%= 'active' if index.zero? %>">
+            <h3><%= car_type.titleize %></h3>
+            <%= image_tag "#{car_type}.jpg", alt: car_type.titleize, class: 'd-block w-100' %>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+ <div class="car-selection w-50" data-controller="selection">
+  <h6>Your Racing Team</h6>
+  <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
+    <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label_method: :first, value_method: :second, input_html: { class: 'form-select navbar-dropdown', data: { action: "change->selection#updateVehicle", target: "selection.carType" } } %>
+    <%= form.input :location, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label_method: :first, value_method: :second, input_html: { class: 'form-select navbar-dropdown', data: { action: "change->selection#updateLocation", target: "selection.location" } } %>
+
+    <p>Driver: <%= @historical_figure.name %></p>
+    <p data-target="selection.vehicleOutput">Vehicle: <%= @race.car_type.titleize if @race.car_type %></p>
+    <p data-target="selection.locationOutput">Race Location: <%= @race.location_enum.titleize if @race.location_enum %></p>
+
+    <%= link_to 'Change Driver', historical_figures_path, class: 'btn-show change-driver-btn' %>
+    <%= form.button :submit, "Confirm Race", class: 'btn-show confirm-race-btn' %>
+  <% end %>
+ </div>
+
+
   </div>
+
 </div>

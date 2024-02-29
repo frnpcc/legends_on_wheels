@@ -1,61 +1,145 @@
+.combined-container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .historical-figure-container {
-  text-align: center;
+  margin-top: 90px;
   margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .historical-figure-container h1 {
-  font-size: 24px;
+  font-size: 36px;
   margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
 }
 
-.historical-figure-container p {
+.historical-figure-container p,
+.selection-details p {
   font-size: 16px;
   margin-bottom: 15px;
 }
 
 .main-figure-image {
   max-width: 100%;
-  height: 300px;
+  height: 250px;
   border-radius: 10px;
+  background-color: #d9d9d9;
+  margin-top: 10px;
+}
+
+.figure-image {
+  flex-basis: 25%;
+}
+
+.figure-text {
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  flex-basis: 70%;
 }
 
 .figure-details {
+  width: 80%;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
 }
 
+
 .carousel-container {
-  width: 50%;
+  position: relative;
+  flex-basis: 65%;
 }
 
-#carouselExampleIndicators {
-  width: 50%;
-  margin: 0 auto;
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
-.carousel-inner img {
-  max-width: 100%;
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
   height: auto;
 }
 
 
-.car-selection {
-  width: 45%;
-}
-
-.dropdown {
+.carousel-item img {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  height: auto;
+  border-radius: 10px;
 }
 
-.btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
+.car-selection {
+  height: 451px;
+  margin-top: 41px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  flex-basis: 25%;
+}
+
+
+.form-select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  appearance: none;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+
+.selection-details {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+.btn-show {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 20px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  &:a {background-color: #ff7f50;}
+}
+
+.change-driver-btn {
+  background-color: #dddddd;
+  color: #333;
+  background-color: lightgray;
+}
+
+.confirm-race-btn {
+  background-color: #ff7f50;
+  color: white;
+}
+
+
+.btn:hover {
+  opacity: 0.8;
 }
