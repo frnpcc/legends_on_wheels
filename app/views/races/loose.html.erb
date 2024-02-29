@@ -1,7 +1,11 @@
-<div class="result-page d-none" data-controller="result">
-  <%= image_tag "dalle.png", class: "logo", alt: "Five Things Logo" %>
-  <p>Some fancy animation</p>
-</div>
+<div class="result-page"
+      data-controller="result"
+      data-action="animationed->result-page#result-loose"
+      style="position: relative;">
 
-<h2>YOU LOOSEE!!!!!!!</h2>
-<%= link_to "Start again", root_path %>
+  <%= link_to "START AGAIN", historical_figures_path, class: "btn-result"%>
+
+  <%= image_tag "lose.png",
+      class: "result-img-animation",
+      alt: "Loosing Image" %>
+</div>

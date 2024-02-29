@@ -2,14 +2,40 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 1;
   animation: slideDownFadeOut 2s ease-in-out forwards;
+}
+
+.result-img-animation{
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn-result {
+  position: absolute;
+  z-index: 3;
+  bottom: calc(50% - 64px);
+  left: calc(50% - 44px);
+  height: 44px;
+  width: fit-content;
+  background-color: white;
+  border: solid 2px $LoW-orange;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: $headers-font-sm;
+  transition: color 0.5s, transform 0.2s, background-color 0.2s;
+  &:hover{
+    // transform: translate(4px, 8px);
+    transform: scale(1.2);
+  }
 }
 
 @keyframes slideDownFadeOut {
@@ -18,13 +44,8 @@
     opacity: 1;
   }
 
-  50% {
+  100% {
     transform: translateY(0);
     opacity: 1;
-  }
-
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
   }
 }

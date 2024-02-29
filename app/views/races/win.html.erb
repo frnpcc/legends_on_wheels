@@ -1,9 +1,11 @@
-<div class="result-page d-none" data-controller="result" data--action="animationed->result-page#result-win">
-  <%= image_tag "dalle.png", class: "logo", alt: "Five Things Logo" %>
-  <p>Some fancy animation</p>
-</div>
+<div class="result-page"
+      data-controller="result"
+      data-action="animationed->result-page#result-win"
+      style="position: relative;">
 
-<div class="container p-5">
-  <h2>YOU WON!!!!!!! 🏆🏆🏆🏆🏆</h2>
-  <%= link_to "Start again", root_path, class: "btn btn-light" %>
+  <%= link_to "START AGAIN", historical_figures_path, class: "btn-result"%>
+
+  <%= image_tag "win.png",
+      class: "result-img-animation",
+      alt: "Winning Image" %>
 </div>
