@@ -17,7 +17,9 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" if @should_render_navbar %>
+    <%= render "shared/flashes" %>
+
     <div style="padding-top: 200px;">
       <%= yield %>
       <%= render "shared/flashes", style: "z-index: 2;" %>

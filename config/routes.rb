@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get "/win", to: "races#win", as: :win
   get "/loose", to: "races#loose", as: :loose
+  get "/result", to: "races#result", as: :result
 end

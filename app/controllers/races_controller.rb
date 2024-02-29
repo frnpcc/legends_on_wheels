@@ -31,10 +31,16 @@ class RacesController < ApplicationController
     end
   end
 
+  def result
+    redirect_to ["win", "win", "loose"].sample == "win" ? win_path : loose_path
+  end
+
   def win
+    @should_render_navbar = false
   end
 
   def loose
+    @should_render_navbar = false
   end
 
   private
