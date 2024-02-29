@@ -1,6 +1,8 @@
  <h2 class="historical-figure-page-cta">Select your Historical Figure for the Race!  </h2>
-<div class="container-card">
+<div class="container-card container">
+  <div class="row">
   <% @historical_figures.each do |figure| %>
+    <div class="cards-columns col-12 col-lg-4">
     <div class="card">
       <%= link_to historical_figure_path(figure), class: "card" do %>
       <div class="picture-box">
@@ -8,8 +10,13 @@
       </div>
       <h2 class="historical-figure-name"><%= figure.name %></h2>
       <p class="historical-figure-category"><%= figure.category %></p>
+      <div class="price-container">
+      <p class="price"> Price</p>
       <p class="historical-figure-price"><%= figure.price %> FR</p>
+      </div>
       <% end %>
     </div>
+    </div>
   <% end %>
+  </div>
 </div>
