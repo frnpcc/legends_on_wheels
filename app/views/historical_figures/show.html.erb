@@ -28,6 +28,11 @@
     <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
       <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
       <%= form.input :location_enum, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label_method: :first, value_method: :second, input_html: { class: 'dropdown' } %>
+      <%= form.input :location,
+            input_html: {data: {location_autocomplete_target: "location"}, class: "d-none mapboxgl-ctrl-geocoder"},
+            wrapper_html: {data: {controller: "location-autocomplete",
+            location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+          %>
       <%= form.button :submit, "Confirm Selection" %>
     <% end %>
   </div>
