@@ -9,7 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(241, 238, 217, 1);
 }
 
 .container-card {
@@ -21,6 +23,7 @@ body {
   gap: 20px;
   /* Space between boxes if they wrap to the next line */
   background-color: rgba(241, 238, 217, 1);
+  border: none;
 }
 
 .card {
@@ -32,6 +35,17 @@ body {
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
+  margin: 0 auto;
+}
+
+.row {
+  margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-columns {
+  margin-bottom: 16px;
 }
 
 .picture-box {
@@ -68,11 +82,30 @@ body {
   text-decoration: none;
 }
 
-.historical-figure-price {
+.price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* This vertically centers the items if their heights differ */
+  gap: 10px;
+  /* Optional: adds some space between the label and the value */
+}
+
+.price {
   font-size: 16px;
   font-weight: 700;
   margin-top: 8px;
   margin-left: 13px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.historical-figure-price {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-right: 13px;
   text-align: left;
   text-decoration: none;
 }
