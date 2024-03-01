@@ -9,19 +9,37 @@
 
     <div class="car-type-race-container col-12 col-md-6">
       <h3><%= @car_type.titleize %></h3>
-        <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
+      <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
     </div>
   </div>
 
   <div class="start-race-button-container">
-    <%= link_to "Start your engine!", result_path, class: "btn-custom" %>
+    <%= link_to "Start your engine!", result_path, class: "btn-custom", id: "start-engine-button" %>
   </div>
 
   <h3 class="map-title">Your race is going to be here:</h3>
-    <div class="map" style="width: 100%; height: 400px;"
-      data-controller="map"
-      data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
+  <div class="map" style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
+
+<!-- Correct placement of the audio tag -->
+<audio id="engine-sound" src="<%= asset_path('win_sound.mp3') %>" preload="auto"></audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var startButton = document.getElementById('start-engine-button');
+    var engineSound = document.getElementById('engine-sound');
+
+    startButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      engineSound.play();
+
+      setTimeout(function() {
+        window.location.href = startButton.href;
+      }, 3500);
+    });
+  });
+</script>

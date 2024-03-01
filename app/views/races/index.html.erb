@@ -17,22 +17,5 @@
     </div>
   </div>
 
-  <div class="latest-results">
-    <div class="results-box wins">
-      <h3>Wins</h3>
-      <ul>
-        <% @races.where(result: 'win').each do |race| %>
-          <li> 🏆 <%= race.historical_figure.name %> won on <%= race.created_at.strftime('%B %d, %Y') %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="results-box losses">
-      <h3>Losses</h3>
-      <ul>
-        <% @races.where(result: 'loss').each do |race| %>
-          <li> ❌ <%= race.historical_figure.name %> lost on <%= race.created_at.strftime('%B %d, %Y') %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+
 </div>

@@ -10,7 +10,15 @@ class Race < ApplicationRecord
   enum car_type: {
     bmw_m4_competition: 0,
     ford_mustang: 1,
-    vw_bus: 2
+    vw_bus: 2,
+    mini_cooper: 3,
+    tesla_model_s: 4,
+    porsche911: 5,
+    ferrari458: 6,
+    lamborghini_huracan: 7,
+    bugatti_veyron: 8,
+    koenigsegg_one: 9,
+    mclaren_p1: 10
   }, _prefix: true
 
   enum location_enum: {

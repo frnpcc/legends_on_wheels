@@ -8,4 +8,13 @@
   <%= image_tag "lose.png",
       class: "result-img-animation",
       alt: "Loosing Image" %>
+
+  <audio id="page-load-sound" src="<%= asset_path('lose_sound.mp3') %>" preload="auto"></audio>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var pageLoadSound = document.getElementById('page-load-sound');
+    pageLoadSound.play();
+  });
+</script>
