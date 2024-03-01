@@ -28,14 +28,14 @@
       </div>
   </div>
 
-    <%= link_to "Start your engine!", result_path, class: "btn-custom start-engine-button" %>
+<%= link_to "Start your engine!", result_path, class: "btn-custom start-engine-button", id: "start-engine-button" %> <!-- Added ID here -->
 </div>
 
 <audio id="engine-sound" src="<%= asset_path('win_sound.mp3') %>" preload="auto"></audio>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var startButton = document.getElementById('start-engine-button');
+    var startButton = document.querySelector('.start-engine-button'); // Changed to querySelector and targeting class
     var engineSound = document.getElementById('engine-sound');
 
     startButton.addEventListener('click', function(e) {
@@ -43,7 +43,7 @@
       engineSound.play();
 
       setTimeout(function() {
-        window.location.href = startButton.href;
+        window.location.href = startButton.getAttribute('href'); // Changed to getAttribute for href
       }, 3500);
     });
   });
