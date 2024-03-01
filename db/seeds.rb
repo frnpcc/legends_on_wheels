@@ -1,15 +1,16 @@
-Race.destroy_all
-HistoricalFigure.destroy_all
-User.destroy_all
 puts "Cleaning database 🧼"
 sleep 1
 
+Race.destroy_all
+HistoricalFigure.destroy_all
+User.destroy_all
+
 frederic = User.create!(name: "Frederic Marchal", username: "fmarchal03", email: "fmarchal03@test.com", password: "123456")
-User.create!(name: "Daniel Felipe Vanegas", username: "dfvanegas1", email: "dfvanegas1@test.com", password: "123456")
-User.create!(name: "Franchesca Correa", username: "frnpcc", email: "frnpcc@test.com", password: "123456")
-User.create!(name: "Michalis Ioannides", username: "1567ds", email: "1567ds@test.com", password: "123456")
+daniel = User.create!(name: "Daniel Felipe Vanegas", username: "dfvanegas1", email: "dfvanegas1@test.com", password: "123456")
+franchesca = User.create!(name: "Franchesca Correa", username: "frnpcc", email: "frnpcc@test.com", password: "123456")
+michalis = User.create!(name: "Michalis Ioannides", username: "1567ds", email: "1567ds@test.com", password: "123456")
 emma = User.create!(name: "Emma A. A. Rünzel", username: "emmvs", email: "emmvs@test.com", password: "123456")
-User.create!(name: "Gonzalo Guerra", username: "Gonz44", email: "gonz44@test.com", password: "123456")
+gonzo = User.create!(name: "Gonzalo Guerra", username: "Gonz44", email: "gonz44@test.com", password: "123456")
 
 puts "#{User.count} Users created 🤦🏻‍♂️ 👱🏼‍♀️ 🤷🏻‍♀️ 👲🏻"
 
@@ -20,7 +21,15 @@ queen = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709228114/queen_neutral-Photoroom.png-Photoroom_ykvsnj.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 100_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    "bmw_m4_competition" => 3,
+    "ford_mustang" => 2,
+    "vw_bus" => 4,
+    "mini_cooper" => 5,
+    "porsche911" => 1,
+    "ferrari458" => 0
+  }
 )
 
 lincoln = HistoricalFigure.create!(
@@ -30,7 +39,15 @@ lincoln = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044279/DALL_E_2024-02-26_20.20.03_-_Create_a_close-up_image_of_a_character_s_head_in_a_playful_and_historically_themed_cartoon-style_inspired_by_a_generic_figure_reminiscent_of_Abraham_-Photoroom.png-Photoroom_l3qwyl.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 50_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 2,
+    ford_mustang: 5,
+    vw_bus: 4,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 3
+  }
 )
 
 cleo = HistoricalFigure.create!(
@@ -40,7 +57,15 @@ cleo = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044193/DALL_E_2024-02-26_20.28.10_-_Create_a_close-up_image_of_a_character_s_head_in_a_playful_and_historically_themed_cartoon-style_inspired_by_a_generic_figure_reminiscent_of_Cleopatr-Photoroom.png-Photoroom_d7zgtq.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 80_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 1,
+    ford_mustang: 0,
+    vw_bus: 5,
+    mini_cooper: 4,
+    porsche911: 3,
+    ferrari458: 2
+  }
 )
 
 napoleon = HistoricalFigure.create!(
@@ -50,7 +75,15 @@ napoleon = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044269/DALL_E_2024-02-26_20.14.17_-_Create_a_close-up_image_of_a_character_s_head_in_a_playful_and_historically_themed_cartoon-style_inspired_by_Napoleon_Bonaparte._The_character_should-Photoroom.png-Photoroom_dj4vgv.jpg?_s=public-apps',
   category: 'Military Leader',
   price: 30_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 3,
+    ford_mustang: 1,
+    vw_bus: 0,
+    mini_cooper: 5,
+    porsche911: 4,
+    ferrari458: 2
+  }
 )
 
 marie = HistoricalFigure.create!(
@@ -60,7 +93,15 @@ marie = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044220/DALL_E_2024-02-26_20.11.58_-_Create_a_close-up_image_of_a_character_s_head_that_embodies_a_whimsical_generic_scientist_inspired_by_Marie_Curie_set_within_the_playful_and_histori-Photoroom.png-Photoroom_brdfpj.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 15_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 3,
+    vw_bus: 2,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 5
+  }
 )
 
 albert = HistoricalFigure.create!(
@@ -70,7 +111,15 @@ albert = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044214/DALL_E_2024-02-26_20.08.04_-_Create_a_close-up_image_of_a_character_s_head_that_embodies_a_whimsical_generic_scientist_inspired_by_the_playful_and_historically_themed_cartoon-st-Photoroom.png-Photoroom_gcrvpn.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 65_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 2,
+    vw_bus: 1,
+    mini_cooper: 3,
+    porsche911: 5,
+    ferrari458: 4
+  }
 )
 
 rosalind = HistoricalFigure.create!(
@@ -80,7 +129,15 @@ rosalind = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709281374/DALL_E_2024-03-01_09.20.35_-_Create_a_cartoon_portrait_of_a_woman_with_dark_short_wavy_hair_dark_eyebrows_and_a_gentle_smile-Photoroom_1_-Photoroom.png-Photoroom_lzv8ad.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 20_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 2,
+    ford_mustang: 4,
+    vw_bus: 3,
+    mini_cooper: 5,
+    porsche911: 1,
+    ferrari458: 0
+  }
 )
 
 mansa = HistoricalFigure.create!(
@@ -90,7 +147,15 @@ mansa = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227034/DALL_E_2024-02-29_18.07.20_-_Visualize_a_character_inspired_by_Mansa_Musa_emphasizing_his_African_heritage_in_a_whimsical_historically_themed_style_focusing_on_his_head._The_ch-Photoroom.png-Photoroom_pgaehp.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 40_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 2,
+    ford_mustang: 4,
+    vw_bus: 3,
+    mini_cooper: 5,
+    porsche911: 1,
+    ferrari458: 0
+  }
 )
 
 ada = HistoricalFigure.create!(
@@ -100,7 +165,15 @@ ada = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709228113/ada_lovelace_neutral-Photoroom-Photoroom_1_1_-Photoroom.png-Photoroom_ci2ki0.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 25_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 1,
+    ford_mustang: 5,
+    vw_bus: 4,
+    mini_cooper: 0,
+    porsche911: 2,
+    ferrari458: 3
+  }
 )
 
 genghis = HistoricalFigure.create!(
@@ -110,7 +183,15 @@ genghis = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227033/DALL_E_2024-02-29_18.04.23_-_Envision_a_whimsical_character_s_head_inspired_by_Genghis_Khan_focusing_solely_on_the_facial_features_and_headwear._This_character_has_a_playful_expr-Photoroom.png-Photoroom_x5e10c.jpg?_s=public-apps',
   category: 'Military Leader',
   price: 50_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 2,
+    vw_bus: 1,
+    mini_cooper: 0,
+    porsche911: 3,
+    ferrari458: 5
+  }
 )
 
 joan = HistoricalFigure.create!(
@@ -120,7 +201,15 @@ joan = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227035/DALL_E_2024-02-29_18.08.38_-_Create_a_whimsical_historically_themed_portrayal_of_Joan_of_Arc_focusing_on_her_head._This_interpretation_captures_her_as_a_figure_of_strength_and_d-Photoroom.png-Photoroom-Photoroom.png-Photoroom-Photoro_1_ls60bh.jpg?_s=public-apps',
   category: 'Military Leader',
   price: 35_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 3,
+    vw_bus: 5,
+    mini_cooper: 4,
+    porsche911: 2,
+    ferrari458: 1
+  }
 )
 
 rosa = HistoricalFigure.create!(
@@ -130,7 +219,15 @@ rosa = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230069/image-Photoroom.png-Photoroom_hzuhty.jpg?_s=public-apps',
   category: 'Activist',
   price: 45_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 3,
+    ford_mustang: 0,
+    vw_bus: 1,
+    mini_cooper: 5,
+    porsche911: 4,
+    ferrari458: 2
+  }
 )
 
 leonardo = HistoricalFigure.create!(
@@ -140,7 +237,15 @@ leonardo = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227034/DALL_E_2024-02-29_18.13.50_-_Visualize_a_whimsical_character_inspired_by_Leonardo_da_Vinci_focusing_on_the_head._This_character_combines_elements_of_historical_accuracy_with_imag-Photoroom.png-Photoroom_ubjt1b.jpg?_s=public-apps',
   category: 'Artist and Scientist',
   price: 200_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 5,
+    vw_bus: 2,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 3
+  }
 )
 
 wilhelm = HistoricalFigure.create!(
@@ -150,7 +255,15 @@ wilhelm = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235091/DALL_E_2024-02-29_20.28.28_-_Create_a_more_playful_and_cartoon-styled_portrait_of_Wilhelm_Tell_focusing_closely_on_his_head_and_a_bit_of_his_shoulders-Photoroom_1_-Photoroom.png-Photoroom_vx2yei.jpg?_s=public-apps',
   category: 'National Hero',
   price: 95_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 5,
+    vw_bus: 2,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 3
+  }
 )
 
 amelia = HistoricalFigure.create!(
@@ -160,7 +273,15 @@ amelia = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227034/DALL_E_2024-02-29_18.14.56_-_Create_a_whimsical_historically_themed_portrayal_of_Amelia_Earhart_focusing_on_her_head._This_interpretation_captures_her_as_a_figure_of_boldness_an-Photoroom.png-Photoroom_oxlrgz.jpg?_s=public-apps',
   category: 'Aviator',
   price: 55_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 5,
+    ford_mustang: 4,
+    vw_bus: 3,
+    mini_cooper: 0,
+    porsche911: 2,
+    ferrari458: 1
+  }
 )
 
 harriet = HistoricalFigure.create!(
@@ -170,7 +291,15 @@ harriet = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227034/DALL_E_2024-02-29_18.15.54_-_Create_a_whimsical_historically_themed_portrayal_of_Harriet_Tubman_focusing_on_her_head._This_interpretation_captures_her_as_a_figure_of_courage_and-Photoroom.png-Photoroom_gevbqr.jpg?_s=public-apps',
   category: 'Activist',
   price: 60_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 1,
+    ford_mustang: 2,
+    vw_bus: 4,
+    mini_cooper: 5,
+    porsche911: 3,
+    ferrari458: 0
+  }
 )
 
 jfk = HistoricalFigure.create!(
@@ -180,7 +309,16 @@ jfk = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235092/DALL_E_2024-02-29_20.21.42_-_Create_a_playful_and_cartoon-styled_portrait_of_John_F._Kennedy_emphasizing_his_charismatic_and_visionary_leadership-Photoroom_1_-Photoroom.png-Photoroom_k7apa8.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 110_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 3,
+    vw_bus: 1,
+    mini_cooper: 2,
+    porsche911: 4,
+    ferrari458: 5
+  }
+
 )
 
 frida = HistoricalFigure.create!(
@@ -190,7 +328,15 @@ frida = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709228114/frida_kahlo_neutral-Photoroom.png-Photoroom_xtisud.jpg?_s=public-apps',
   category: 'Artist',
   price: 85_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 5,
+    vw_bus: 3,
+    mini_cooper: 2,
+    porsche911: 0,
+    ferrari458: 1
+  }
 )
 
 nikola = HistoricalFigure.create!(
@@ -200,7 +346,16 @@ nikola = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230013/image_1_-Photoroom.png-Photoroom_inrjny.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 95_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 2,
+    ford_mustang: 0,
+    vw_bus: 5,
+    mini_cooper: 3,
+    porsche911: 1,
+    ferrari458: 4
+  }
+
 )
 
 george = HistoricalFigure.create!(
@@ -210,7 +365,15 @@ george = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230010/image_2_-Photoroom_1_-Photoroom.png-Photoroom_auatnj.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 100_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 3,
+    ford_mustang: 1,
+    vw_bus: 0,
+    mini_cooper: 4,
+    porsche911: 2,
+    ferrari458: 5
+  }
 )
 
 hatshepsut = HistoricalFigure.create!(
@@ -220,7 +383,15 @@ hatshepsut = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230011/image_3_-Photoroom-Photoroom.png-Photoroom_cxsrtl.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 90_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 5,
+    ford_mustang: 3,
+    vw_bus: 1,
+    mini_cooper: 2,
+    porsche911: 0,
+    ferrari458: 4
+  }
 )
 
 isaac = HistoricalFigure.create!(
@@ -230,7 +401,15 @@ isaac = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235102/DALL_E_2024-02-29_20.17.14_-_Create_a_whimsical_yet_respectful_portrait_of_Sir_Isaac_Newton_focusing_on_his_head._The_portrait_should_capture_Newton_s_essence_as_a_pioneering_sci-Photoroom.png-Photoroom_rmrrsq.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 110_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 1,
+    ford_mustang: 4,
+    vw_bus: 2,
+    mini_cooper: 5,
+    porsche911: 3,
+    ferrari458: 0
+  }
 )
 
 gandhi = HistoricalFigure.create!(
@@ -240,7 +419,15 @@ gandhi = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235105/DALL_E_2024-02-29_20.16.23_-_Create_a_whimsical_yet_respectful_portrait_of_Mahatma_Gandhi_focusing_on_his_head._The_portrait_should_capture_Gandhi_s_essence_as_a_symbol_of_peace_-Photoroom.png-Photoroom_qk34ty.jpg?_s=public-apps',
   category: 'Activist',
   price: 120_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 2,
+    ford_mustang: 0,
+    vw_bus: 4,
+    mini_cooper: 1,
+    porsche911: 5,
+    ferrari458: 3
+  }
 )
 
 marie_antoinette = HistoricalFigure.create!(
@@ -250,7 +437,15 @@ marie_antoinette = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230070/image_7_-Photoroom.png-Photoroom_hgsgp3.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 65_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 2,
+    vw_bus: 5,
+    mini_cooper: 3,
+    porsche911: 4,
+    ferrari458: 1
+  }
 )
 
 confucius = HistoricalFigure.create!(
@@ -260,7 +455,15 @@ confucius = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230016/image_6_-Photoroom.png-Photoroom_i0oesi.jpg?_s=public-apps',
   category: 'Philosopher',
   price: 75_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 3,
+    ford_mustang: 5,
+    vw_bus: 0,
+    mini_cooper: 2,
+    porsche911: 1,
+    ferrari458: 4
+  }
 )
 
 alexander = HistoricalFigure.create!(
@@ -270,7 +473,15 @@ alexander = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230014/image_5_-Photoroom.png-Photoroom_qtdpmv.jpg?_s=public-apps',
   category: 'Military Leader',
   price: 130_000,
-  strength: 4
+  strength: 4,
+  car_compatibility: {
+    bmw_m4_competition: 5,
+    ford_mustang: 1,
+    vw_bus: 2,
+    mini_cooper: 0,
+    porsche911: 3,
+    ferrari458: 4
+  }
 )
 
 florence = HistoricalFigure.create!(
@@ -280,7 +491,15 @@ florence = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235099/DALL_E_2024-02-29_20.18.10_-_Create_a_whimsical_yet_respectful_portrait_of_Florence_Nightingale_focusing_on_her_head._This_interpretation_captures_Nightingale_s_essence_as_the_fo-Photoroom.png-Photoroom_mr047y.jpg?_s=public-apps',
   category: 'Medical Pioneer',
   price: 80_000,
-  strength: 3
+  strength: 3,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 2,
+    vw_bus: 3,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 5
+  }
 )
 
 caesar = HistoricalFigure.create!(
@@ -290,7 +509,15 @@ caesar = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709230011/image_4_-Photoroom_1_-Photoroom.png-Photoroom_vzfqvb.jpg?_s=public-apps',
   category: 'Military Leader',
   price: 100_000,
-  strength: 2
+  strength: 2,
+  car_compatibility: {
+    bmw_m4_competition: 4,
+    ford_mustang: 2,
+    vw_bus: 3,
+    mini_cooper: 1,
+    porsche911: 0,
+    ferrari458: 5
+  }
 )
 
 austen = HistoricalFigure.create!(
@@ -300,7 +527,15 @@ austen = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235097/DALL_E_2024-02-29_20.19.49_-_Create_a_playful_and_cartoon-styled_portrait_of_Jane_Austen_emphasizing_her_whimsical_side-Photoroom_1_-Photoroom.png-Photoroom_lyrjm8.jpg?_s=public-apps',
   category: 'Author',
   price: 55_000,
-  strength: 5
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 4,
+    vw_bus: 2,
+    mini_cooper: 1,
+    porsche911: 5,
+    ferrari458: 3
+  }
 )
 
 wright = HistoricalFigure.create!(
@@ -310,21 +545,73 @@ wright = HistoricalFigure.create!(
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709235094/DALL_E_2024-02-29_20.20.29_-_Create_a_playful_and_cartoon-styled_portrait_of_the_Wright_Brothers_emphasizing_their_inventive_and_pioneering_spirit._This_cartoon_version_features_-Photoroom.png-Photoroom_xpdvhu.jpg?_s=public-apps',
   category: 'Aviator and Inventor',
   price: 90_000,
-  strength: 2
+  strength: 2,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 5,
+    vw_bus: 4,
+    mini_cooper: 3,
+    porsche911: 2,
+    ferrari458: 1
+  }
+)
+
+gonzo = HistoricalFigure.create!(
+  name: 'Gonzalo Guerra Figueroa',
+  bio: "I used to be a teacher and before that a bartender. I want to learn to code to make my new career something that is in continuous evolution and try to find my spot in an ever growing market. I want to work in teams and help bring projects or whatever it is I end up doing, to people everywhere.",
+  era: '21st century',
+  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709304981/DALL_E_2024-03-01_15.55.51_-_Create_a_cartoon_version_of_a_man_with_a_medium_build_larger_than_the_first_image_but_not_as_large_as_the_second._He_has_short_brown_hair_a_full_bea-Photoroom.png-Photoroom_xcu2ra.jpg?_s=public-apps',
+  category: 'Batch Manager, Maintenance & Cleaning Lady',
+  price: 90_000,
+  strength: 2,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 5,
+    vw_bus: 4,
+    mini_cooper: 3,
+    porsche911: 2,
+    ferrari458: 1
+  }
+)
+
+tamara = HistoricalFigure.create!(
+  name: 'Tamara Torrecillas Gutierrez',
+  bio: "Digital entrepreneur, Translator and Influencer Marketing expert! I launched my own company three years ago. Excited about taking on new challenges!",
+  era: '21st century',
+  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709304720/tamara_neutral-Photoroom.png-Photoroom_okiyul.jpg?_s=public-apps',
+  category: 'Teacher & Star',
+  price: 90_000,
+  strength: 5,
+  car_compatibility: {
+    bmw_m4_competition: 0,
+    ford_mustang: 5,
+    vw_bus: 4,
+    mini_cooper: 3,
+    porsche911: 2,
+    ferrari458: 1
+  }
 )
 
 puts "#{HistoricalFigure.count} Historical Figures created 🏆"
 
 Race.create!(
-  user_id: emma.id,
-  historical_figure_id: queen.id,
+  user_id: daniel.id,
+  historical_figure_id: tamara.id,
   result: 'win',
-  location: "Berlin, Germany",
+  location: "Rome, Italy",
   location_enum: 0
 )
 
 Race.create!(
-  user_id: emma.id,
+  user_id: daniel.id,
+  historical_figure_id: queen.id,
+  result: 'win',
+  location: "Caracas, Venezuela",
+  location_enum: 0
+)
+
+Race.create!(
+  user_id: daniel.id,
   historical_figure_id: lincoln.id,
   result: 'win',
   location: "Berlin, Germany",
@@ -332,27 +619,75 @@ Race.create!(
 )
 
 Race.create!(
-  user_id: frederic.id,
+  user_id: daniel.id,
+  historical_figure_id: cleo.id,
+  result: 'win',
+  location: "Milan, Italy"
+)
+
+Race.create!(
+  user_id: daniel.id,
+  historical_figure_id: gonzo.id,
+  result: 'win',
+  location: "Madrid, Spain"
+)
+
+Race.create!(
+  user_id: daniel.id,
+  historical_figure_id: cleo.id,
+  result: 'win',
+  location: "Cyprus, Greece"
+)
+
+Race.create!(
+  user_id: daniel.id,
+  historical_figure_id: tamara.id,
+  result: 'win',
+  location: "Valencia, Spain"
+)
+
+Race.create!(
+  user_id: daniel.id,
   historical_figure_id: cleo.id,
   result: 'loss',
-  location: "Basel, Switzerland",
+  location: "Casablanca, Morocco",
   location_enum: 1
 )
 
 Race.create!(
-  user_id: frederic.id,
-  historical_figure_id: marie.id,
+  user_id: daniel.id,
+  historical_figure_id: albert.id,
   result: 'loss',
-  location: "Basel, Switzerland",
-  location_enum: 0
+  location: "Paris, France"
 )
 
 Race.create!(
-  user_id: frederic.id,
+  user_id: daniel.id,
+  historical_figure_id: rosa.id,
+  result: 'loss',
+  location: "Basel, Switzerland"
+)
+
+Race.create!(
+  user_id: daniel.id,
   historical_figure_id: cleo.id,
-  result: 'win',
-  location: "Basel, Switzerland",
-  location_enum: 2
+  result: 'loss',
+  location: "Casablanca, Morocco",
+  location_enum: 1
+)
+
+Race.create!(
+  user_id: daniel.id,
+  historical_figure_id: gonzo.id,
+  result: 'loss',
+  location: "Bogota, Colombia"
+)
+
+Race.create!(
+  user_id: daniel.id,
+  historical_figure_id: marie.id,
+  result: 'loss',
+  location: "Stockholm, Sweden"
 )
 
 puts "#{Race.count} Races created 🏎️💨 🏁 🏁 🏁"

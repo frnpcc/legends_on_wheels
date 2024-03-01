@@ -12,8 +12,8 @@ class Race < ApplicationRecord
     ford_mustang: 1,
     vw_bus: 2,
     mini_cooper: 3,
-    porsche911: 4,
-    ferrari458: 5
+    porsche_911: 4,
+    ferrari_458: 5
   }, _prefix: true
 
   enum location_enum: {
