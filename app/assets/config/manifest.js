@@ -4,3 +4,5 @@
 //= link_tree ../../../vendor/javascript .js
 //= link popper.js
 //= link bootstrap.min.js
+//= link win_sound.mp3
+//= link lose_sound.mp3
