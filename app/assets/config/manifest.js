@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link win_sound.mp3
 //= link lose_sound.mp3
+//= link cheering_sound.mp3
