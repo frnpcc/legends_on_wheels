@@ -1,4 +1,4 @@
-.race-page-container {
+r.race-page-container {
   margin-top: 35px;
   margin: 35px 20px;
 }
@@ -14,33 +14,29 @@
 
 .race-container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
-
-}
-
-.team-container-big {
-  padding-right: 20px;
+  gap: 10px;
 }
 
 .team-card {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   align-items: center;
-  margin: auto;
   background-color: white;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  max-width: 60%;
 }
 
 .map-race-container {
   background-color: white;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  max-width: 40%;
 }
 
 .team-container-small {
@@ -84,10 +80,6 @@
   gap: 10px;
 }
 
-.team-container-content {
-  padding-left: 10;
-}
-
 .main-figure-image-race {
   max-width: 100%;
   // width: 100%;
@@ -127,5 +119,4 @@
 
 .team-title {
   text-align: center;
-  background-color: rgba(241, 238, 217, 1);
 }
