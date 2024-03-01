@@ -57,7 +57,6 @@
   justify-content: space-between;
 }
 
-
 .carousel-container {
   position: relative;
   flex-basis: 65%;
@@ -76,7 +75,6 @@
   width: 100%;
   height: auto;
 }
-
 
 .carousel-item img {
   width: 100%;
@@ -109,15 +107,13 @@
   font-size: 16px;
 }
 
-
 .selection-details {
-  text-align: center;
+  text-align: left;
   border-top: 1px solid #ccc;
   padding-top: 10px;
   margin-top: 10px;
   font-size: 16px;
 }
-
 
 .btn-custom {
   display: block;
@@ -132,7 +128,6 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-
 
 .btn-change-driver {
   background-color: #dddddd;
