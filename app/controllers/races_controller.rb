@@ -2,6 +2,7 @@ class RacesController < ApplicationController
 
   def index
     @races = Race.all
+    @current_score = current_user.score
   end
 
   def show
@@ -32,7 +33,7 @@ class RacesController < ApplicationController
   end
 
   def result
-    redirect_to ["win", "win", "loose"].sample == "win" ? win_path : loose_path
+    redirect_to if_win? ? win_path && increment_score! : loose_path && decrement_score!
   end
 
   def win
@@ -44,6 +45,18 @@ class RacesController < ApplicationController
   end
 
   private
+
+  def increment_score!
+    current_user.score += 1
+  end
+
+  def decrement_score!
+    current_user.score -= 1
+  end
+
+  def if_win?
+    ["win", "win", "loose"].sample == "win"
+  end
 
   def race_params
     params.require(:race).permit(:historical_figure_id, :car_type, :location_enum, :location)

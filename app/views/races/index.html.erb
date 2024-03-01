@@ -1,12 +1,14 @@
 <% content_for :title, 'Race Results' %>
 
-<div class="races-index">
+<div class="races-index mt-5">
   <div class="top-button">
-    <a href="/historical_figures" class="btn btn-orange">Start New Race</a>
+    <h2>🏆 Your current score is: <%= @current_score %></h2>
+    <a href="/historical_figures" class="btn-result">Start New Race</a>
   </div>
 </div>
 
-  <div class="race-images">
+
+  <div class="race-images d-flex justify-content-center content-align-space-between">
     <div class="left-image">
       <%= image_tag 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709114605/trophy-for-1st-place-2nd-place-and-3rd-place-winner-cartoon-icon-illustration-championship-icon-concept-isolated-premium-flat-cartoon-style-vector-Photoroom.png-Photoroom_kojxvg.jpg?_s=public-apps', alt: 'Left Race Image', class: 'race-image' %>
     </div>
