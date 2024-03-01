@@ -17,7 +17,7 @@ queen = HistoricalFigure.create!(
   name: 'Queen Elizabeth II',
   bio: "Queen Elizabeth II, born on April 21, 1926, ascended to the throne in 1952, becoming the longest-reigning monarch in British history. Her reign has witnessed remarkable socio-political changes, including the decolonization of Africa and the Caribbean, the transition of the British Empire into the Commonwealth of Nations, and numerous technological advancements. Elizabeth's leadership and dedication to her duties have made her a symbol of stability and continuity in the modern era. Her reign has also been marked by a modernization of the monarchy and its role in public and charitable service.",
   era: '20th-21st century',
-  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709044208/DALL_E_2024-02-26_20.42.38_-_Create_a_3D-style_rendered_illustration_of_an_elderly_woman_with_a_warm_smile_wearing_a_light_blue_dress_with_a_floral_pattern_a_pearl_necklace_and-Photoroom.png-Photoroom_aeujr1.jpg?_s=public-apps',
+  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709228114/queen_neutral-Photoroom.png-Photoroom_ykvsnj.jpg?_s=public-apps',
   category: 'Political Leader',
   price: 100_000
 )
@@ -71,7 +71,7 @@ HistoricalFigure.create!(
   name: 'Rosalind Franklin',
   bio: "Rosalind Franklin (1920-1958) was an English chemist whose work on X-ray diffraction was critical in the understanding of DNA. Franklin's photographs of DNA allowed Watson and Crick to create their famous model of DNA. Despite her pivotal role, her contributions were not fully recognized until after her death. Franklin's work extends beyond DNA to RNA, viruses, coal, and graphite. Her dedication to science and her pioneering techniques have left a lasting legacy in the field of molecular biology.",
   era: '20th century',
-  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709227033/DALL_E_2024-02-29_17.59.19_-_Create_an_image_of_a_character_with_a_playful_expression_inspired_by_the_style_of_the_previous_character_wearing_a_Napoleonic_hat._This_new_character-Photoroom.png-Photoroom_ok8kka.jpg?_s=public-apps',
+  image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709281374/DALL_E_2024-03-01_09.20.35_-_Create_a_cartoon_portrait_of_a_woman_with_dark_short_wavy_hair_dark_eyebrows_and_a_gentle_smile-Photoroom_1_-Photoroom.png-Photoroom_lzv8ad.jpg?_s=public-apps',
   category: 'Scientist and Inventor',
   price: 20_000
 )
