@@ -1,6 +1,9 @@
 class HistoricalFiguresController < ApplicationController
   def index
     @historical_figures = HistoricalFigure.all
+    if params[:query].present?
+      @historical_figures = @historical_figures.search_by_name__category_and_era(params[:query])
+    end
   end
 
   def show
