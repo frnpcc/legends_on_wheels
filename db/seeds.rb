@@ -561,7 +561,7 @@ gonzo = HistoricalFigure.create!(
   bio: "I used to be a teacher and before that a bartender. I want to learn to code to make my new career something that is in continuous evolution and try to find my spot in an ever growing market. I want to work in teams and help bring projects or whatever it is I end up doing, to people everywhere.",
   era: '21st century',
   image_url: 'https://res.cloudinary.com/dswjgd3a4/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1709304981/DALL_E_2024-03-01_15.55.51_-_Create_a_cartoon_version_of_a_man_with_a_medium_build_larger_than_the_first_image_but_not_as_large_as_the_second._He_has_short_brown_hair_a_full_bea-Photoroom.png-Photoroom_xcu2ra.jpg?_s=public-apps',
-  category: 'Batch Manager, Maintenance & Cleaning Lady',
+  category: 'Batch Manager, Maintenance & Cleaning Lady',
   price: 90_000,
   strength: 2,
   car_compatibility: {
@@ -721,9 +721,6 @@ Race.create!(
   historical_figure_id: florence.id,
   result: 'loss',
   location: "Lausanne, Switzerland"
-  result: 'loss',
-  location: "Casablanca, Morocco",
-  location_enum: 1
 )
 
 Race.create!(
