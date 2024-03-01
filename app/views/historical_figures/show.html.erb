@@ -11,6 +11,7 @@
   </div>
 
   <div class="figure-details d-flex flex-row justify-content-between w-100">
+    
     <div id="carouselExampleIndicators" class="carousel-container carousel slide w-50" data-bs-ride="carousel">
       <div class="carousel-inner">
         <% Race.car_types.keys.each_with_index do |car_type, index| %>
@@ -30,34 +31,46 @@
       </button>
     </div>
 
-  <div class="car-selection w-50" data-controller="selection">
+  <div class="car-selection w-50" data-controller="selection location-autocomplete" data-location-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
      <div class="title-wrapper">
-      <h6 class="selection-title">Your Racing Team</h6>
+      <h6 class="selection-title">Select Your Team</h6>
      </div>
-  <hr class="full-width-line"/>
-    <%= simple_form_for [@historical_figure, @race], local: true do |form| %>
+     <hr class="full-width-line"/>
 
-      <%= form.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label: false, prompt: "Select Car", input_html: { class: 'form-select', data: { action: "change->selection#updateVehicle", target: "selection.carType" } } %>
+      <%= simple_form_for [@historical_figure, @race], local: true do |f| %>
+        <%= f.input :car_type, collection: Race.car_types.keys.map { |car_type| [car_type.titleize, car_type] }, label: false, prompt: "Select Car", 
+        input_html: { class: 'form-select', 
+          data: { 
+            action: "input->selection#updateVehicle", 
+            selection_target: "carType" 
+          } 
+        } %>
 
-      <%= form.input :location, collection: Race.location_enums.keys.map { |location_enum| [location_enum.titleize, location_enum] }, label: false, prompt: "Select Location", input_html: { class: 'form-select', data: { action: "change->selection#updateLocation", target: "selection.location" } } %>
-      <%= form.input :location,
-        input_html: {data: {location_autocomplete_target: "location"}, class: "d-none mapboxgl-ctrl-geocoder"},
-        wrapper_html: {data: {controller: "location-autocomplete",
-        location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-      %>
+        <%= f.input :location,
+          input_html: {
+            data: {
+              action: "locationSelected->selection#updateLocation", 
+              selection_target: "locat",
+              location_autocomplete_target: "location"
+            },
+            class: "d-none mapboxgl-ctrl-geocoder"
+          },
+          wrapper_html: {
+            data: {
+              location_autocomplete_target: "input",
+            }
+          }
+        %>
 
-      <div class="selection-details">
-        <p>Driver: <%= @historical_figure.name %></p>
-        <p data-target="selection.vehicleOutput">Vehicle: <%= @race.car_type.titleize if @race.car_type %></p>
-        <p data-target="selection.locationOutput">Race Location: <%= @race.location_enum.titleize if @race.location_enum %></p>
-      </div>
+        <div class="selection-details">
+          <p>🏷️ <%= @historical_figure.name %></p>
+          <p data-selection-target="vehicleOutput">🚗 <%= @race.car_type.titleize if @race.car_type %></p>
+          <p data-location-autocomplete-target="showResult">📍 <%= @race.location.titleize if @race.location %></p>
+        </div>
 
-      <%= link_to 'Change Driver', historical_figures_path, class: 'btn-custom btn-change-driver' %>
-      <%= form.button :submit, "Confirm Race", class: 'btn-custom btn-confirm-race', style: "display: block; width: 100%; margin: 10px 0; padding: 10px 0; border-radius: 20px; border: none; font-size: 18px; font-weight: bold; text-align: center; text-decoration: none; transition: background-color 0.3s ease; background-color: #ff7f50; color: white;" %>
-    <% end %>
+        <%= link_to 'Change Driver', historical_figures_path, class: 'btn-custom btn-change-driver' %>
+        <%= f.button :submit, "Confirm Race", class: 'btn-custom btn-confirm-race', style: "display: block; width: 100%; margin: 10px 0; padding: 10px 0; margin-bottom: 20px; border-radius: 20px; border: none; font-size: 18px; font-weight: bold; text-align: center; text-decoration: none; transition: background-color 0.3s ease; background-color: #F98039; color: white;" %>
+      <% end %>
+    </div>
   </div>
-
-
-  </div>
-
 </div>

@@ -23,6 +23,24 @@
       </div>
     </div>
 
+<div class="container">
+  <h1 class="race-show-recap-title">Here is your team!</h1>
+  <div class="team-container row">
+    <div class="historical-figure-race-container col-12 col-md-6">
+      <h3><%= @historical_figure.name %></h3>
+      <p><%= @historical_figure.bio %></p>
+      <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image-race' %>
+    </div>
+
+    <div class="car-type-race-container col-12 col-md-6">
+      <h3><%= @car_type.titleize %></h3>
+      <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
+    </div>
+  </div>
+
+  <div class="start-race-button-container">
+    <%= link_to "Start your engine!", result_path, class: "btn-custom", id: "start-engine-button" %>
+  </div>
 
     <div class="map-race-container col-12 col-md-4">
       <h3 class="map-title">Your race is going to be here:</h3>
@@ -38,3 +56,22 @@
    <%= link_to "Start your engine!", win_path, class: "start-engine-button" %>
   </div>
 </div>
+
+<!-- Correct placement of the audio tag -->
+<audio id="engine-sound" src="<%= asset_path('win_sound.mp3') %>" preload="auto"></audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var startButton = document.getElementById('start-engine-button');
+    var engineSound = document.getElementById('engine-sound');
+
+    startButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      engineSound.play();
+
+      setTimeout(function() {
+        window.location.href = startButton.href;
+      }, 3500);
+    });
+  });
+</script>

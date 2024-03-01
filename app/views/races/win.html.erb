@@ -1,11 +1,21 @@
 <div class="result-page"
-      data-controller="result"
-      data-action="animationed->result-page#result-win"
-      style="position: relative;">
+     data-controller="result"
+     data-action="animationed->result-page#result-win"
+     style="position: relative;">
 
-  <%= link_to "START AGAIN", historical_figures_path, class: "btn-result"%>
+  <%= link_to "START AGAIN", historical_figures_path, class: "btn-result" %>
 
   <%= image_tag "win.png",
       class: "result-img-animation",
       alt: "Winning Image" %>
+
+
+  <audio id="page-load-sound" src="<%= asset_path('cheering_sound.mp3') %>" preload="auto"></audio>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var pageLoadSound = document.getElementById('page-load-sound');
+    pageLoadSound.play();
+  });
+</script>

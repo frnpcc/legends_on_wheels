@@ -54,14 +54,10 @@
   border-radius: 10px;
 }
 
-
-
 .historical-figure-race-container {
   justify-content: space-between;
   align-items: center;
-  /* This vertically centers the items if their heights differ */
   gap: 10px;
-  /* Optional: adds some space between the label and the value */
 }
 
 .race-picture-box {
@@ -85,7 +81,6 @@
 .car-type-race-container {
   justify-content: space-between;
   align-items: center;
-  /* This vertically centers the items if their heights differ */
   gap: 10px;
 }
 
@@ -123,7 +118,6 @@
   border-radius: 5px;
 }
 
-
 .map-title {
   justify-content: center;
   align-items: center;
@@ -133,4 +127,7 @@
 
 .team-title {
   text-align: center;
+}
+
+  background-color: rgba(241, 238, 217, 1);
 }

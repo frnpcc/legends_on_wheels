@@ -1,7 +1,18 @@
-<h2 class="historical-figure-page-cta my-5">Select your Historical Figure for the Race!</h2>
+<div class="container d-flex justify-content-center align-items-center title-and-search">
+  <h2 class="historical-figure-page-cta my-5">Select your Historical Figure for the Race!</h2>
+  <%= form_with url: historical_figures_path, method: :get, class: "d-flex h-100" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "search-bar",
+          placeholder: "Type a keyword"
+      %>
+    <%= button_tag(type: 'submit', class: 'img-search-btn') do %>
+     <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
+  <% end %>
+</div>
 
-<div class="container container-card">
-  <div class="historical-figure-grid row">
+<div class="container container-card-index">
     <% @historical_figures.each do |figure| %>
       <div class="cards-columns col-12 col-lg-4">
       <div class="card">
@@ -19,5 +30,4 @@
       </div>
       </div>
     <% end %>
-  </div>
 </div>

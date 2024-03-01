@@ -33,7 +33,13 @@ class RacesController < ApplicationController
   end
 
   def result
-    redirect_to if_win? ? win_path && increment_score! : loose_path && decrement_score!
+    if if_win?
+      increment_score!
+      redirect_to win_path
+    else
+      decrement_score!
+      redirect_to loose_path
+    end
   end
 
   def win
@@ -55,7 +61,7 @@ class RacesController < ApplicationController
   end
 
   def if_win?
-    ["win", "win", "loose"].sample == "win"
+    ["win", "loose"].sample == "win"
   end
 
   def race_params
