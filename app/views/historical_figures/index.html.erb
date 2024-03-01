@@ -1,7 +1,7 @@
 <h2 class="historical-figure-page-cta my-5">Select your Historical Figure for the Race!</h2>
 
 <div class="container container-card">
-  <div class="row">
+  <div class="historical-figure-grid row">
     <% @historical_figures.each do |figure| %>
       <div class="cards-columns col-12 col-lg-4">
       <div class="card">
@@ -13,7 +13,7 @@
         <p class="historical-figure-category"><%= figure.category %></p>
         <div class="price-container">
         <p class="price"> Price</p>
-        <p class="historical-figure-price"><%= figure.price %> FR</p>
+        <p class="historical-figure-price"><%= figure.price %> ₣ </p>
         </div>
         <% end %>
       </div>

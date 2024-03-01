@@ -1,28 +1,40 @@
-<div class="container">
-  <h1 class="race-show-recap-title">Here is your team!</h1>
-  <div class="team-container row">
-  <div class="historical-figure-race-container col-12 col-md-6">
-    <h3><%= @historical_figure.name %></h3>
-    <p><%= @historical_figure.bio %></p>
-    <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image-race' %>
-  </div>
+<div class="race-page-container">
+  <h1 class="race-show-recap-title">Your race recap</h1>
+  <div class="race-container row">
 
-  <div class="car-type-race-container col-12 col-md-6">
-    <h3><%= @car_type.titleize %></h3>
-    <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
-  </div>
-  </div>
+    <div class="team-container-big col-12 col-md-8">
+      <div class="team-card">
+        <div class="team-container-content">
+      <h2 class="team-title">Your team is <%= @historical_figure.name %> Driving a <%= @car_type.titleize %>! </h2>
+      <div class="team-container-small">
+        <div class="historical-figure-race-container">
+          <div class="race-picture-box">
+            <%= image_tag @historical_figure.image_url, alt: @historical_figure.name, class: 'main-figure-image-race' %>
+          </div>
+        </div>
 
+        <div class="car-type-race-container">
+          <div class="race-car-box">
+            <%= image_tag "#{@car_type}.jpg", alt: @car_type.titleize, class: "car-race-image" %>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="map-race-container col-12 col-md-4">
+      <h3 class="map-title">Your race is going to be here:</h3>
+      <div class="map" style="width: 100%; height: 400px;"
+        data-controller="map"
+        data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
 
   <div class="start-race-button-container">
-   <%= link_to "Start your engine!", win_path, class: "btn-custom" %>
+   <%= link_to "Start your engine!", win_path, class: "start-engine-button" %>
   </div>
-
-  <h3 class="map-title">Your race is going to be here:</h3>
-  <div class="map" style="width: 100%; height: 400px;"
-    data-controller="map"
-    data-map-geolocation-hash-value="<%= @geolocation_hash.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
 </div>
