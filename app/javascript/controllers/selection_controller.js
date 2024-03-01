@@ -1,17 +1,24 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["carType", "location", "vehicleOutput", "locationOutput"]
+  static targets = ["carType", "locat", "vehicleOutput", "locationOutput"]
 
   connect() {
     console.log("Selection controller connected");
   }
 
   updateVehicle() {
-    this.vehicleOutputTarget.textContent = `Vehicle: ${this.carTypeTarget.value}`;
+    const formattedCarType = this.formatCarType(this.carTypeTarget.value);
+    this.vehicleOutputTarget.textContent = `🚗 ${formattedCarType}`;
   }
 
-  updateLocation() {
-    this.locationOutputTarget.textContent = `Race Location: ${this.locationTarget.value}`;
+  formatCarType(carType) {
+    if (!carType) return '';
+
+    return carType
+      .replace(/_/g, ' ')
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   }
 }
