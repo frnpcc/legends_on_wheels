@@ -4,7 +4,7 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 import { Application } from "@hotwired/stimulus"
-import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
+// import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 
 window.Stimulus = Application.start()
-eagerLoadControllersFrom("controllers", Stimulus)
+// eagerLoadControllersFrom("controllers", Stimulus)
