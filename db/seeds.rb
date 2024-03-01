@@ -319,40 +319,84 @@ Race.create!(
   user_id: emma.id,
   historical_figure_id: queen.id,
   result: 'win',
-  location: "Berlin, Germany",
-  location_enum: 0
+  location: "Berlin, Germany"
 )
 
 Race.create!(
   user_id: emma.id,
   historical_figure_id: lincoln.id,
   result: 'win',
-  location: "Berlin, Germany",
-  location_enum: 2
+  location: "Berlin, Germany"
 )
 
 Race.create!(
   user_id: frederic.id,
   historical_figure_id: cleo.id,
   result: 'loss',
-  location: "Basel, Switzerland",
-  location_enum: 1
+  location: "Basel, Switzerland"
 )
 
 Race.create!(
   user_id: frederic.id,
   historical_figure_id: marie.id,
   result: 'loss',
-  location: "Basel, Switzerland",
-  location_enum: 0
+  location: "Basel, Switzerland"
 )
 
 Race.create!(
   user_id: frederic.id,
   historical_figure_id: cleo.id,
   result: 'win',
-  location: "Basel, Switzerland",
-  location_enum: 2
+  location: "Basel, Switzerland"
+)
+
+Race.create!(
+  user_id: emma.id,
+  historical_figure_id: napoleon.id,
+  result: 'loss',
+  location: "Paris, France"
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: gandhi.id,
+  result: 'win',
+  location: "Zurich, Switzerland"
+)
+
+Race.create!(
+  user_id: emma.id,
+  historical_figure_id: rosalind.id,
+  result: 'win',
+  location: "Munich, Germany"
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: alexander.id,
+  result: 'loss',
+  location: "Geneva, Switzerland"
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: hatshepsut.id,
+  result: 'win',
+  location: "Lucerne, Switzerland"
+)
+
+Race.create!(
+  user_id: emma.id,
+  historical_figure_id: isaac.id,
+  result: 'win',
+  location: "Hamburg, Germany"
+)
+
+Race.create!(
+  user_id: frederic.id,
+  historical_figure_id: florence.id,
+  result: 'loss',
+  location: "Lausanne, Switzerland"
 )
 
 puts "#{Race.count} Races created 🏎️💨 🏁 🏁 🏁"

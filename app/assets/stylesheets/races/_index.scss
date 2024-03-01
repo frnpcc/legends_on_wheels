@@ -1,36 +1,25 @@
-.races-index {
-  text-align: center;
-}
-
-.btn-orange {
-  background-color: orange;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.race-images .race-image {
-  width: 300px;
-  height: auto;
-  margin: 20px;
-  display: inline-block;
-}
-
 .latest-results {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}
+
+.results-section {
+  width: 500px;
+  margin: 0 50px;
+}
+
+.results-title {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
 }
 
 .results-box {
-  width: 500px;
-  margin: 0 10px;
   padding: 15px;
-  border: 1px solid #ddd;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .wins {
@@ -39,4 +28,79 @@
 
 .losses {
   background-color: #f2dede;
+}
+
+.results-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.results-box li {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.results-box li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.right-image-small {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 310px;
+  height: auto;
+  overflow: hidden;
+}
+
+.left-image {
+  width: 150px;
+  height: auto;
+}
+
+.right-image-small-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 310px;
+  height: auto;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.top-button h2 {
+  font-size: 40px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+.race-start-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-results {
+  display: inline-block;
+  height: 44px;
+  width: fit-content;
+  background-color: white;
+  border: solid 2px $LoW-orange;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: $headers-font-sm;
+  transition: color 0.5s, transform 0.2s, background-color 0.2s;
+  &:hover{
+  // transform: translate(4px, 8px);
+  transform: scale(1.2);
+}
 }
